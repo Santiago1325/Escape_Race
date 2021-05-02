@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CarRepair.ogg-11796bb6271cf8f59c641b9daf4fec3d.oggstr"
+
+[deps]
+
+source_file="res://Assets/CarRepair.ogg"
+dest_files=[ "res://.import/CarRepair.ogg-11796bb6271cf8f59c641b9daf4fec3d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

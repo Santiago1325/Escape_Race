@@ -1,0 +1,180 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://UI/Menu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/NFS_by_JLTV.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/LabelBackground.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Menu_back.jpg" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+modulate_color = Color( 0, 0.505882, 1, 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 45
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+modulate_color = Color( 0, 1, 0.0156863, 1 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 45
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+modulate_color = Color( 1, 0.870588, 0.0156863, 1 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 45
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+modulate_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 45
+font_data = ExtResource( 3 )
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -331.5
+margin_top = -209.5
+margin_right = 331.5
+margin_bottom = 209.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/VBoxContainer3"]
+margin_right = 742.0
+margin_bottom = 168.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Background/VBoxContainer3/VBoxContainer"]
+margin_right = 742.0
+margin_bottom = 113.0
+custom_fonts/font = SubResource( 1 )
+text = "ESCAPE RACE"
+align = 1
+
+[node name="Play" type="Button" parent="Background/VBoxContainer3/VBoxContainer"]
+margin_top = 117.0
+margin_right = 742.0
+margin_bottom = 168.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Background/VBoxContainer3"]
+margin_top = 172.0
+margin_right = 742.0
+margin_bottom = 278.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowTo" type="Button" parent="Background/VBoxContainer3/VBoxContainer2"]
+margin_right = 742.0
+margin_bottom = 51.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "How to PLay"
+
+[node name="Credits" type="Button" parent="Background/VBoxContainer3/VBoxContainer2"]
+margin_top = 55.0
+margin_right = 742.0
+margin_bottom = 106.0
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="Background/VBoxContainer3"]
+margin_top = 282.0
+margin_right = 742.0
+margin_bottom = 333.0
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Background/VBoxContainer3/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer3/VBoxContainer2/HowTo" to="." method="_on_HowTo_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer3/VBoxContainer2/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer3/Quit" to="." method="_on_Quit_pressed"]

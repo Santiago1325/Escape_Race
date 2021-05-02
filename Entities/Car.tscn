@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Car.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Engine.ogg" type="AudioStream" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -36.75, -13.4757, -38.25, -0.2257, -36.5, 13.5243, -26.75, 15.7743, 5, 16.2743, 5.5, 20.0243, 8.75, 16.5243, 24.5, 17.5243, 31.75, 14.7743, 33, 8.7743, 36, 7.0243, 38, 0.0242996, 36.5, -6.4757, 32.5, -9.4757, 31, -15.4757, 23.5, -16.2257, 9, -15.4757, 6.5, -18.9757, 4.75, -16.7257, -24.5, -15.7257 )
+
+[node name="Car" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ -20.75 ]
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 1 )
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 0.125003, 0.124997 )
+scale = Vector2( 0.0745908, 0.0745908 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -36.5, 14.2743, -25, 16.7743, 3.75, 16.0243, 25.75, 16.7743, 34.5, 13.5243, 37.75, 8.0243, 38.5, 1.0243, 38, -6.4757, 34.5, -14.2257, 24.25, -16.9757, 0, -16.2257, -26, -16.9757, -36.25, -13.7257, -38.25, -9.9757, -38.75, -1.4757, -37.75, 9.0243 )
+
+[node name="Engine" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+pitch_scale = 0.01
+autoplay = true

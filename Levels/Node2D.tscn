@@ -1,0 +1,97 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Assets/Road_TileSet.png" type="Texture" id=2]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 219, 220, 35, 220, 35, 36, 219, 36 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=2]
+vertices = PoolVector2Array( 0, 220, 256, 220, 256, 35, 219, 35, 218, 0, 35, 0, 37, 35, 0, 35 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=3]
+vertices = PoolVector2Array( 35, 0, 34, 256, 218, 256, 219, 220, 256, 221, 256, 37, 219, 37, 218, 0, 37, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ) ]
+
+[sub_resource type="NavigationPolygon" id=4]
+vertices = PoolVector2Array( 34, 0, 219, 0, 218, 37, 256, 37, 256, 220, 191, 211, 147, 191, 127, 179, 76, 127, 61, 104, 45, 64 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ) ]
+
+[sub_resource type="NavigationPolygon" id=5]
+vertices = PoolVector2Array( 0, 34, 0, 220, 37, 221, 37, 256, 220, 256, 220, 221, 256, 219, 256, 37, 0, 35 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ) ]
+
+[sub_resource type="NavigationPolygon" id=6]
+vertices = PoolVector2Array( 256, 219.303, 0, 219.303, 0, 36.3033, 256, 36.3033 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=7]
+vertices = PoolVector2Array( 36, 256, 220, 256, 220, 218, 256, 218, 256, 37, 191, 46, 149, 64, 128, 78, 77, 128, 64, 148, 46, 192 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ) ]
+
+[sub_resource type="NavigationPolygon" id=8]
+vertices = PoolVector2Array( 256, 221.303, 36, 221.303, 36, 35.3033, 256, 35.3033 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=9]
+vertices = PoolVector2Array( 0, 36, 37, 36, 34, 0, 218, 0, 218, 256, 34, 256, 34, 220, 0, 220 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=10]
+vertices = PoolVector2Array( 0, 35, 36, 36, 36, 0, 217, 0, 210, 64, 181, 126, 126, 179, 106, 192, 63, 211, 0, 219 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) ]
+
+[sub_resource type="NavigationPolygon" id=11]
+vertices = PoolVector2Array( 221, 256, 35, 256, 35, 1.30334, 221, 1.30334 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=12]
+vertices = PoolVector2Array( 219, 220.303, 35, 220.303, 35, 1.30334, 219, 1.30334 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=13]
+vertices = PoolVector2Array( 35, 256, 35, 220, 0, 221, 0, 38, 64, 46, 126, 75, 192, 149, 210, 192, 219, 256 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ) ]
+
+[sub_resource type="NavigationPolygon" id=14]
+vertices = PoolVector2Array( 221, 219, 0, 219, 0, 36, 221, 36 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=15]
+vertices = PoolVector2Array( 219, 256, 37, 256, 37, 35.3033, 219, 35.3033 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=16]
+vertices = PoolVector2Array( 36, 0, 219, 0, 219, 37, 256, 36, 256, 220, 220, 220, 221, 256, 36, 256, 38, 219, 0, 218, 0, 36, 36, 36, 37, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ) ]
+
+[sub_resource type="TileSet" id=17]
+0/name = "Road_TileSet.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 1024, 1024 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 16, Vector2( 0, 1 ), 58, Vector2( 0, 2 ), 178, Vector2( 0, 3 ), 50, Vector2( 1, 0 ), 184, Vector2( 1, 1 ), 56, Vector2( 1, 2 ), 176, Vector2( 1, 3 ), 48, Vector2( 2, 0 ), 154, Vector2( 2, 1 ), 26, Vector2( 2, 2 ), 146, Vector2( 2, 3 ), 18, Vector2( 3, 0 ), 152, Vector2( 3, 1 ), 24, Vector2( 3, 2 ), 144, Vector2( 3, 3 ), 186 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 256, 256 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [ Vector2( 0, 0 ), SubResource( 1 ), Vector2( 0, 1 ), SubResource( 2 ), Vector2( 0, 2 ), SubResource( 3 ), Vector2( 0, 3 ), SubResource( 4 ), Vector2( 1, 0 ), SubResource( 5 ), Vector2( 1, 1 ), SubResource( 6 ), Vector2( 1, 2 ), SubResource( 7 ), Vector2( 1, 3 ), SubResource( 8 ), Vector2( 2, 0 ), SubResource( 9 ), Vector2( 2, 1 ), SubResource( 10 ), Vector2( 2, 2 ), SubResource( 11 ), Vector2( 2, 3 ), SubResource( 12 ), Vector2( 3, 0 ), SubResource( 13 ), Vector2( 3, 1 ), SubResource( 14 ), Vector2( 3, 2 ), SubResource( 15 ), Vector2( 3, 3 ), SubResource( 16 ) ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="RoadTileSet" type="TileMap"]
+tile_set = SubResource( 17 )
+cell_size = Vector2( 256, 256 )
+format = 1

@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Menu_back.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/NFS_by_JLTV.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/LabelBackground.png" type="Texture" id=3]
+[ext_resource path="res://UI/Credits.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 75
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 46
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 1024, 256 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 45
+font_data = ExtResource( 2 )
+
+[node name="HowTo" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 44.4975
+margin_top = 46.6164
+margin_right = 591.497
+margin_bottom = 130.616
+custom_fonts/font = SubResource( 1 )
+text = "CREDITS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -903.0
+margin_top = -880.594
+margin_right = 894.0
+margin_bottom = -56.5942
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Programming and Graphics 
+> Santiago Jaimes
+
+Songs :
+> [url=\"https://www.youtube.com/watch?v=HRvZIWDMP3s\"]surgery - IMPerative[/url] (MENu SONG  )
+> [url=\"https://www.youtube.com/watch?v=6S-l2TGJYsc&t=2s\"]NFS The run OST - Make up TIme[/url] (PUrsuit SONG )
+
+SOUND EFFECTS
+> [url=\"https://www.youtube.com/watch?v=osJBs_St99c\"]EMP[/url]
+> [url=\"https://www.youtube.com/watch?v=lMZXjCeAUPM\"]ENGINE[/url]
+> [url=\"https://www.youtube.com/watch?v=W2lMt0wRHQg\"]SIrens[/url]
+> [url=\"https://www.youtube.com/watch?v=9f3iOIkcgbs\"]Impact[/url]
+> [url=\"https://www.youtube.com/watch?v=tpNMZyVAvX4&t=23s\"]Repair[/url]
+> [url=\"https://www.youtube.com/watch?v=fRJwRDriw8k&t=253s\"]Ambient[/url]
+
+TESTING
+> A. Aristizabal
+
+[/center]"
+text = "Programming and Graphics 
+> Santiago Jaimes
+
+Songs :
+> surgery - IMPerative (MENu SONG  )
+> NFS The run OST - Make up TIme (PUrsuit SONG )
+
+SOUND EFFECTS
+> EMP
+> ENGINE
+> SIrens
+> Impact
+> Repair
+> Ambient
+
+TESTING
+> A. Aristizabal
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1385.39
+margin_top = 43.9081
+margin_right = 1857.39
+margin_bottom = 94.9081
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "Back to menu          "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="meta_clicked" from="RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

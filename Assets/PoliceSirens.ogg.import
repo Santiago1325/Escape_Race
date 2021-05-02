@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PoliceSirens.ogg-6bb9ffcb09b7bb5f1da5dc55227b1c4e.oggstr"
+
+[deps]
+
+source_file="res://Assets/PoliceSirens.ogg"
+dest_files=[ "res://.import/PoliceSirens.ogg-6bb9ffcb09b7bb5f1da5dc55227b1c4e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Entities/AICar.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Car.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Car.png" type="Texture" id=3]
+[ext_resource path="res://Assets/torchmap.png" type="Texture" id=4]
+[ext_resource path="res://Assets/ImpactSFX.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Assets/PoliceSirens.ogg" type="AudioStream" id=6]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Police Sirens"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Body:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0, 0, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[node name="AICar" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+EnginePower = 1000
+SlipSpeed = 150
+
+[node name="Body" parent="." index="1"]
+texture = ExtResource( 3 )
+
+[node name="Left" type="Light2D" parent="." index="2"]
+position = Vector2( 32, -11 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+offset = Vector2( 315, -1 )
+energy = 1.5
+shadow_enabled = true
+
+[node name="Right" type="Light2D" parent="." index="3"]
+position = Vector2( 33, 11 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+offset = Vector2( 315, -1 )
+energy = 1.5
+shadow_enabled = true
+
+[node name="Area2D" type="Area2D" parent="." index="5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="0"]
+polygon = PoolVector2Array( 36, -15, 40.5, -1, 37.5, 13, 340.473, 97.8115, 339.285, -100.786 )
+
+[node name="Timer2" type="Timer" parent="." index="6"]
+one_shot = true
+
+[node name="HitZone" type="Area2D" parent="." index="7"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitZone" index="0"]
+polygon = PoolVector2Array( 35.25, -14.125, 38.125, -7.25, 38.625, -0.125, 38.5, 5.625, 35.625, 12.625, 32.5, 15.125, 36, 15.375, 39.5, 11.125, 41.375, 0.125, 39.625, -8.125, 36.875, -14.5 )
+
+[node name="Impact" type="AudioStreamPlayer2D" parent="." index="8"]
+stream = ExtResource( 5 )
+volume_db = -5.0
+pitch_scale = 0.5
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="10"]
+tree_root = SubResource( 1 )
+anim_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree" index="0"]
+"anims/Police Sirens" = SubResource( 2 )
+
+[node name="Sirens" type="AudioStreamPlayer2D" parent="." index="11"]
+stream = ExtResource( 6 )
+volume_db = -35.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="body_entered" from="HitZone" to="." method="_on_HitZone_body_entered"]
