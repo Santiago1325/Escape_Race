@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Entities/Car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Car.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/ImpactSFX.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Arrow.png" type="Texture" id=5]
 [ext_resource path="res://Effects/Collision.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Alarm.ogg" type="AudioStream" id=7]
 
 [node name="Player" instance=ExtResource( 1 )]
 collision/safe_margin = 0.001
@@ -54,8 +55,12 @@ texture = ExtResource( 5 )
 offset = Vector2( -3.78888, 584.151 )
 
 [node name="FuelTimer" type="Timer" parent="." index="11"]
-wait_time = 0.1
+wait_time = 0.09
 autostart = true
+
+[node name="Alarm" type="AudioStreamPlayer" parent="." index="12"]
+stream = ExtResource( 7 )
+volume_db = -15.0
 
 [connection signal="timeout" from="TurboTimer" to="." method="_on_TurboTimer_timeout"]
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_ShakeTimer_timeout"]

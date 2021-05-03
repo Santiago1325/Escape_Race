@@ -64,10 +64,10 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 128.057
-margin_top = 200.517
-margin_right = 1925.06
-margin_bottom = 1056.52
+margin_left = 128.0
+margin_top = 159.0
+margin_right = 1925.0
+margin_bottom = 1107.0
 custom_fonts/normal_font = SubResource( 2 )
 text = "You are a street racer, the cops are looking for you.
 
@@ -83,11 +83,14 @@ You are safe in the darkness, if a cop enlightens you it will chase you
 
 If you lose a cop it will look for you
 
-Use the turbo to leave them behind  (SHIFT KEY)
+Use the turbo to leave them behind
 
 Use the EMP to shut down the cops for a short ammount of time
 
-
+W  -> ACCELERATE
+A/D -> LEFT / RIGHT
+SPACEBAR -> DRIFT
+SHIFT -> TURBO
 "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -109,9 +112,9 @@ __meta__ = {
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 margin_left = 20.0
-margin_top = 268.0
+margin_top = 235.0
 margin_right = 85.0
-margin_bottom = 333.0
+margin_bottom = 300.0
 rect_pivot_offset = Vector2( 32.5, 32.5 )
 texture = ExtResource( 5 )
 expand = true
@@ -122,9 +125,9 @@ __meta__ = {
 [node name="TextureRect4" type="TextureRect" parent="."]
 modulate = Color( 0.196078, 1, 0, 1 )
 margin_left = 20.0
-margin_top = 355.307
+margin_top = 322.307
 margin_right = 85.0
-margin_bottom = 420.307
+margin_bottom = 387.307
 rect_pivot_offset = Vector2( 32.5, 32.5 )
 texture = ExtResource( 5 )
 expand = true
@@ -134,9 +137,9 @@ __meta__ = {
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 margin_left = 20.0
-margin_top = 168.0
+margin_top = 135.0
 margin_right = 118.0
-margin_bottom = 266.0
+margin_bottom = 233.0
 texture = ExtResource( 7 )
 expand = true
 __meta__ = {
@@ -145,9 +148,9 @@ __meta__ = {
 
 [node name="TextureRect5" type="TextureRect" parent="."]
 margin_left = 20.0
-margin_top = 435.0
+margin_top = 402.0
 margin_right = 85.0
-margin_bottom = 500.0
+margin_bottom = 467.0
 texture = ExtResource( 8 )
 expand = true
 __meta__ = {
@@ -156,9 +159,9 @@ __meta__ = {
 
 [node name="TextureRect6" type="TextureRect" parent="."]
 margin_left = 20.0
-margin_top = 520.0
+margin_top = 487.0
 margin_right = 85.0
-margin_bottom = 585.0
+margin_bottom = 552.0
 texture = ExtResource( 6 )
 expand = true
 __meta__ = {
@@ -168,9 +171,9 @@ __meta__ = {
 [node name="TextureRect7" type="TextureRect" parent="."]
 modulate = Color( 1, 0, 0, 1 )
 margin_left = 20.0
-margin_top = 605.0
+margin_top = 572.0
 margin_right = 276.0
-margin_bottom = 861.0
+margin_bottom = 828.0
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 9 )
 expand = true
@@ -182,9 +185,9 @@ __meta__ = {
 [node name="TextureRect8" type="TextureRect" parent="."]
 modulate = Color( 0, 0.529412, 0.713726, 1 )
 margin_left = 20.0
-margin_top = 690.281
+margin_top = 657.281
 margin_right = 276.0
-margin_bottom = 946.281
+margin_bottom = 913.281
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 9 )
 expand = true
@@ -195,9 +198,9 @@ __meta__ = {
 
 [node name="TextureRect9" type="TextureRect" parent="."]
 margin_left = 20.0
-margin_top = 770.0
+margin_top = 737.0
 margin_right = 85.0
-margin_bottom = 835.0
+margin_bottom = 802.0
 texture = ExtResource( 10 )
 expand = true
 __meta__ = {
@@ -206,9 +209,9 @@ __meta__ = {
 
 [node name="TextureRect10" type="TextureRect" parent="."]
 margin_left = 20.0
-margin_top = 849.917
+margin_top = 816.917
 margin_right = 85.0
-margin_bottom = 914.917
+margin_bottom = 881.917
 texture = ExtResource( 11 )
 expand = true
 __meta__ = {

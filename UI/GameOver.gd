@@ -15,3 +15,7 @@ func _on_PlayAgain_pressed():
 
 func _on_Menu_pressed():
 	get_tree().change_scene(menu_path)
+
+
+func _on_ChangeColor_pressed():
+	get_tree().change_scene("res://UI/ColorSelection.tscn")

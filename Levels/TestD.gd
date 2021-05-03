@@ -14,6 +14,7 @@ var reapir_sound = preload("res://Assets/CarRepair.ogg")
 var paused = false
 var busting = false
 var game_lost = false
+var won = false
 
 var safezone_locations = [Vector2(2440,130), Vector2(-1406,2177), Vector2(-2985,-1922)]
 var player_spawns = [Vector2(1153,-127), Vector2(-3197,1665), Vector2(1660,384)]
@@ -23,6 +24,7 @@ func _ready():
 	randomize()
 	$Player.position = player_spawns[randi() % 3]
 	$SafeZone.position = safezone_locations[randi() % 3]
+	$Player.fuel /= 2
 	print($SafeZone.position)
 	$Player/Body.modulate = GameVariables.car_color
 	$Player/Arrow.modulate = GameVariables.car_color
@@ -50,7 +52,7 @@ func on_ai_following():
 	update_map_color(last_game_state,game_state)
 
 func on_player_hit():
-	$Player.health -= 65
+	$Player.health -= 75
 	$Player.cam_shake = 2.5
 	$Player/ShakeTimer.start()
 
@@ -186,7 +188,7 @@ func _process(_delta):
 		$CanvasLayer/Busted/TextureProgress.value = 0
 	if $Player.Drifting:
 		$Player.score += 25
-	if $Player.fuel < 0 and not game_lost:
+	if $Player.fuel < 0 and not game_lost and not won:
 		GameVariables.game_over_cause = "You ran out of fuel"
 		game_lost = true
 		$CanvasLayer/PreGameOver/Label.text = "NO FUEL"
@@ -194,13 +196,23 @@ func _process(_delta):
 		$CanvasLayer/PreGameOver.show()
 		$Player.playing = false
 		$GameOverTimer.start()
-	if $Player.health < 0 and not game_lost:
+	if $Player.health < 0 and not game_lost and not won:
 		GameVariables.game_over_cause = "Your car got destroyed"
 		game_lost = true
 		$CanvasLayer/PreGameOver/Label.text = "DESTROYED"
 		$CanvasLayer/PreGameOver.show()
 		$Player.playing = false
 		$GameOverTimer.start()
+	if $Player.low_fuel:
+		$CanvasLayer/HUD/AnimationTreeFuel/AnimationPlayerFuel.play("DangerFuel")
+	else:
+		$CanvasLayer/HUD/AnimationTreeFuel/AnimationPlayerFuel.stop()
+		$CanvasLayer/HUD/HBoxContainer/HBoxContainer3.modulate = Color.white
+	if $Player.low_health:
+		$CanvasLayer/HUD/AnimationTreeHealth/AnimationPlayerHealth.play("DangerHealth")
+	else:
+		$CanvasLayer/HUD/AnimationTreeHealth/AnimationPlayerHealth.stop()
+		$CanvasLayer/HUD/HBoxContainer/HBoxContainer2.modulate = Color.white
 
 func bust_player():
 	var ai_car_array = [$AICar, $AICar2, $AICar3]
@@ -229,7 +241,8 @@ func _on_GameTimer_timeout():
 
 func _on_SafeZone_body_entered(body):
 	if body is PlayerCar and can_finish:
-		$Player.score += 100000
+		$Player.score += 1000000
+		won = true
 		GameVariables.game_over_cause = "You escaped"
 		$CanvasLayer/PreGameOver/Label.text = "ESCAPED"
 		$CanvasLayer/PreGameOver/Label.align = HALIGN_CENTER

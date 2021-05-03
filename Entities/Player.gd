@@ -7,6 +7,9 @@ var has_turbo = false
 var playing = true
 var health = 2000
 var score = 0
+var fuel_loss_mult = 1
+var low_fuel = false
+var low_health = false
 
 func Get_Input():
 	var Turn = 0
@@ -26,6 +29,7 @@ func Get_Input():
 		has_turbo = false
 		EnginePower *= 2
 		cam_shake = 2
+		fuel_loss_mult = 0.5
 		$Flames.emitting = true
 		$Flames2.emitting = true
 		$ShakeTimer.start()
@@ -56,17 +60,32 @@ func _physics_process(delta):
 		$ShakeTimer.start()
 	camera_shake(cam_shake)
 	get_damage()
+	if fuel <= 350:
+		low_fuel = true
+		if not $Alarm.playing:
+			$Alarm.play()
+	else:
+		low_fuel = false
+		if $Alarm.playing and not low_fuel and not low_health:
+			$Alarm.stop()
+	if health <= 500:
+		low_health = true
+		if not $Alarm.playing:
+			$Alarm.play()
+	else:
+		low_health = false
+		if $Alarm.playing and not low_fuel and not low_health:
+			$Alarm.stop()
 	spawn_particles()
 
 func _on_TurboTimer_timeout():
 	EnginePower /= 2
+	fuel_loss_mult = 1
 	$Flames.emitting = false
 	$Flames2.emitting = false
-
 
 func _on_ShakeTimer_timeout():
 	cam_shake = 0
 
-
 func _on_FuelTimer_timeout():
-	fuel -= Velocity.length()/float(200) + 0.5
+	fuel -= (Velocity.length()/float(200) + 0.5) * fuel_loss_mult
