@@ -10,3 +10,7 @@ A/D - Turn Left/Right
 S - Brake  
 SPACEBAR - Drift  
 SHIFT - Turbo
+
+# Playing
+You can download a playable version for Windows, Linux and MacOS on the releases section.  
+Or you can play a browser version on https://santiago-1325.itch.io/escape-race
