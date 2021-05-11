@@ -71,8 +71,8 @@ bbcode_text = "[center]Programming and Graphics
 > Santiago Jaimes
 
 Songs :
-> [url=\"https://www.youtube.com/watch?v=HRvZIWDMP3s\"]surgery - IMPerative[/url] (MENu SONG  )
-> [url=\"https://www.youtube.com/watch?v=6S-l2TGJYsc&t=2s\"]NFS The run OST - Make up TIme[/url] (PUrsuit SONG )
+> [url=\"https://tallbeard.itch.io/music-loop-bundle\"]Ludum Dare 28 - Track 1[/url] (MENu SONG  )
+> [url=\"https://tallbeard.itch.io/music-loop-bundle\"]Ludum Dare 28 - Track 8[/url] (PUrsuit SONG )
 
 SOUND EFFECTS
 > [url=\"https://www.youtube.com/watch?v=osJBs_St99c\"]EMP[/url]
@@ -85,14 +85,15 @@ SOUND EFFECTS
 
 TESTING
 > A. Aristizabal
+> D. Solis
 
 [/center]"
 text = "Programming and Graphics 
 > Santiago Jaimes
 
 Songs :
-> surgery - IMPerative (MENu SONG  )
-> NFS The run OST - Make up TIme (PUrsuit SONG )
+> Ludum Dare 28 - Track 1 (MENu SONG  )
+> Ludum Dare 28 - Track 8 (PUrsuit SONG )
 
 SOUND EFFECTS
 > EMP
@@ -105,6 +106,7 @@ SOUND EFFECTS
 
 TESTING
 > A. Aristizabal
+> D. Solis
 
 "
 __meta__ = {

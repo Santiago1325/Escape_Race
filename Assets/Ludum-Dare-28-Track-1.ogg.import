@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ludum-Dare-28-Track-1.ogg-a52d5c52758fd33354caf4d0888593dc.oggstr"
+
+[deps]
+
+source_file="res://Assets/Ludum-Dare-28-Track-1.ogg"
+dest_files=[ "res://.import/Ludum-Dare-28-Track-1.ogg-a52d5c52758fd33354caf4d0888593dc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

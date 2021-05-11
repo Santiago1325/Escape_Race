@@ -8,7 +8,7 @@ var game_state = "Normal"
 var last_game_state = game_state
 var ai_states
 var can_finish = false
-var pursuit_song = preload("res://Assets/PursuitSong.ogg")
+var pursuit_song = preload("res://Assets/Ludum-Dare-28-Track-8.ogg")
 var emp_sound = preload("res://Assets/EMP_Sound.ogg")
 var reapir_sound = preload("res://Assets/CarRepair.ogg")
 var paused = false
